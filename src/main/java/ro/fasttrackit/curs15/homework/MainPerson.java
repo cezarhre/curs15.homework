@@ -9,8 +9,8 @@ public class MainPerson {
         List<Person> person1 = new ArrayList<>();
                     person1.add(new Person("Costel",35));
                     person1.add(new Person("Dan",45));
-                person1.add(new Person("Ionel",30));
-                person1.add(new Person("Dorina",55));
+                    person1.add(new Person("Ionel",30));
+                    person1.add(new Person("Dorina",55));
         System.out.println(person1);
         person1.add(new Person("George",24));
         System.out.println(person1);
