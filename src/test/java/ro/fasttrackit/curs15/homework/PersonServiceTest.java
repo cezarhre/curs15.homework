@@ -12,9 +12,11 @@ public class PersonServiceTest {
     @DisplayName("WHEN person added is null THEN return persons list")
     void testAddPersonNull(){
         //SETUP
-        PersonService personService = new PersonService(null);
+        PersonService personService = new PersonService(List.of(
+                new Person("Costel",35),
+                new Person("Dan",45)));
         //RUN
-        personService.addPerson(new Person(null,20));
+        personService.addPerson(new Person("Maria",35));
         //ASSERT
         assertThat(personService).isNotNull();
     }
@@ -37,7 +39,9 @@ public class PersonServiceTest {
     @DisplayName("WHEN persons are null THEN return empty list")
     void testAllPersonsNull(){
         //SETUP
-        PersonService personService = new PersonService(null);
+        PersonService personService = new PersonService(List.of(
+                new Person("Costel",35),
+                new Person("Dan",45)));
         //RUN
         List<Person> actual = personService.getAllPersons();
         //ASSERT

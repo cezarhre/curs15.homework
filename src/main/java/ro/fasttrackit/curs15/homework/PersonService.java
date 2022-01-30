@@ -5,19 +5,18 @@ import java.util.*;
 public class PersonService {
 
     private final List<Person> persons = new ArrayList<>();
+    int aid = 0;
 
     public PersonService(List<Person> persons) {
-        this.persons.addAll(persons != null
-                ? persons
-                : Collections.emptyList());
+       for(Person elem : persons){
+           addPerson(elem);
+        }
     }
 
-    public void addPerson(Person person) {
-        if (person != null) {
-            this.persons.add(person);
-        } else {
-            List.of(persons);
-        }
+    public Person addPerson(Person person) {
+        this.persons.add(person);
+        person.setId(++aid);
+        return person;
     }
 
     public boolean remPerson(int id) {          //       persons.removeIf(elem -> elem.getId() == id);
@@ -70,19 +69,6 @@ public class PersonService {
             }
         }
         return null;
-    }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof PersonService that)) return false;
-        return Objects.equals(persons, that.persons);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(persons);
     }
 
     @Override

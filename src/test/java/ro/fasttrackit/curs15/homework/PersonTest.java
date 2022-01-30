@@ -11,7 +11,7 @@ class PersonTest {
     @DisplayName("WHEN name is null THEN throw exception")
     void testNotNullName() {
         //SETUP
-        Person person = new Person( null, 25);
+        Person person = new Person(null,32);
         //RUN
         String name = person.getName();
         //ASSERT

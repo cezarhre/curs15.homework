@@ -5,12 +5,10 @@ import java.util.Objects;
 public final class Person {
     private final String name;
     private final int age;
-    private static int aid = 0;
-    private final int id;
+    public int id;
 
     public Person(String name, int age) {
-        aid++;
-        this.id = aid;
+        this.id = 0;
         this.name = name;
         this.age = age;
 
@@ -34,6 +32,10 @@ public final class Person {
         return result;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -55,5 +57,3 @@ public final class Person {
                 '}';
     }
 }
-
-
